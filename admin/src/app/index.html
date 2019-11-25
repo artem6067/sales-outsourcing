@@ -8,14 +8,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-      <input type="text" class="input-add-page">
-      <button class="button-add-page">Создать страницу</button>
+
+  <div id="app">
+
+    <input type="text" v-model="newPageName">
+    <button v-on:click="createPage">Создать страницу</button>
+
+    <div v-for="page in pageList">
+      <h2>{{ page }} <a href="#" v-on:click="deletePage(page)">x</a></h2>
     </div>
-    <div>
-      <input type="text" class="input-delete-page">
-      <button class="button-delete-page">Удалить страницу</button>
-    </div>
-    <script src="bundle.js"></script>
+
+  </div>
+
+  <script src="bundle.js"></script>
 </body>
 </html>
