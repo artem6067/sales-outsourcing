@@ -27,7 +27,7 @@ gulp.task('copy-assets', () => {
 
 
 gulp.task('build-js', () => {
-  return browserify('./app/main.js', {debug: true})
+  return browserify('./app/js/main.js', {debug: true})
     .transform(babelify, {
       presets: ['@babel/preset-env'],
       sourceMaps: true
