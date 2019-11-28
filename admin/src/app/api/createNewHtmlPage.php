@@ -10,5 +10,3 @@ if (file_exists($newFile)) {
 else {
   fopen($newFile, 'w');
 }
-
-print_r($_POST); 
