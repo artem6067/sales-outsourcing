@@ -1,11 +1,50 @@
-h1, h2 {
-  color: green;
+
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
+@import "../../node_modules/uikit/src/scss/uikit-theme.scss";
+
+$panel-height: 70px;
+
+.panel {
+  height: $panel-height;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 1px 10px rgba(#000, .3);
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
 }
 
 iframe {
   position: absolute;
-  top: 0;
+  top: $panel-height;
   left: 0;
   width: 100%;
+  height: calc(100vh - #{$panel-height});
+}
+
+.loader {
+  display: flex;
+  width: 100%;
   height: 100vh;
+  left: 0;top: 0;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background: rgba(#000, .3);
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .4s;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .uk-spinner {
+    color: #fff;
+    fill: #fff;
+  }
 }
