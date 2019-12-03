@@ -2,7 +2,6 @@ const Editor = require('./editor')
 const Vue = require('vue/dist/vue.min')
 const UIkit = require('uikit')
 
-
 window.editor = new Editor()
 
 new Vue({

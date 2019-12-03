@@ -9,7 +9,7 @@ module.exports = class Editor {
     this.iframe = document.querySelector('iframe')
   }
 
-  open(page, cb) {
+  open(page,cb) {
     this.currentPage = page
 
     axios
